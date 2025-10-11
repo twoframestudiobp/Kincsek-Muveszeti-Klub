@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://twoframestudiobp.github.io/Kincsek-Muveszeti-Klub/sitemap.xml
