@@ -270,10 +270,50 @@
             font-size: 1.8rem;
         }
 
+        h3 {
+            color: #ff69b4;
+            margin: 1.5rem 0 0.8rem;
+            font-size: 1.4rem;
+        }
+
         p {
             line-height: 1.8;
             margin-bottom: 1rem;
             font-size: 1.1rem;
+        }
+
+        .program-box {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+
+        .schedule-table {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin: 1.5rem 0;
+        }
+
+        .schedule-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .schedule-table th,
+        .schedule-table td {
+            padding: 0.8rem;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .schedule-table th {
+            background: linear-gradient(135deg, #ffd6e8 0%, #c5f6fa 100%);
+            font-weight: 600;
+            color: #333;
         }
 
         .decorations {
@@ -382,6 +422,34 @@
             justify-content: center;
             color: #999;
             font-size: 0.9rem;
+            overflow: hidden;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-links a {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: linear-gradient(135deg, #ff69b4 0%, #4ecdc4 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: transform 0.3s;
+        }
+
+        .social-links a:hover {
+            transform: translateY(-2px);
         }
 
         @media (min-width: 768px) {
@@ -428,8 +496,9 @@
             
             <nav class="desktop-nav">
                 <ul>
+                    <li><a href="#" data-section="fooldal">Főoldal</a></li>
+                    <li><a href="#" data-section="rolunk">Rólunk</a></li>
                     <li><a href="#" data-section="programjaink">Programjaink</a></li>
-                    <li><a href="#" data-section="aktualitasok">Aktualitások</a></li>
                     <li><a href="#" data-section="kepek">Képek</a></li>
                     <li><a href="#" data-section="csatlakozz">Csatlakozz</a></li>
                     <li><a href="#" data-section="kapcsolat">Kapcsolat</a></li>
@@ -448,8 +517,9 @@
 
     <div class="mobile-menu">
         <ul>
+            <li><a href="#" data-section="fooldal">Főoldal</a></li>
+            <li><a href="#" data-section="rolunk">Rólunk</a></li>
             <li><a href="#" data-section="programjaink">Programjaink</a></li>
-            <li><a href="#" data-section="aktualitasok">Aktualitások</a></li>
             <li><a href="#" data-section="kepek">Képek</a></li>
             <li><a href="#" data-section="csatlakozz">Csatlakozz</a></li>
             <li><a href="#" data-section="kapcsolat">Kapcsolat</a></li>
@@ -459,7 +529,7 @@
     </div>
 
     <main>
-        <section id="rolunk" class="active">
+        <section id="fooldal" class="active">
             <h1>🌈 Üdvözlünk a Kincsek Művészeti Klubban! 🎨</h1>
             <p>A <strong>Kincsek Művészeti Klub</strong> Budapesten, a Ferencvárosban található <strong>gyermek művészeti foglalkozásokat</strong> kínáló kreatív közösség. Célunk, hogy a gyerekek fejlesszék kreativitásukat, fantáziájukat és művészi képességeiket egy szeretetteljes, biztonságos környezetben.</p>
             
@@ -474,35 +544,203 @@
             <p>A Kincsek Művészeti Klubot <strong>Suki Edina és Suki Zita</strong> ikertestvérek alapították és vezetik. Mindketten óvónői végzettséggel rendelkeznek, jelenleg táncpedagógusként tevékenykednek. Hisszük abban, hogy minden gyermekben ott lapul a kreativitás kincse, amit csak fel kell fedezni és kibontakoztatni. Foglalkozásainkon a gyerekek szabadon alkothatnak, kísérletezhetnek különböző technikákkal és anyagokkal.</p>
         </section>
 
+        <section id="rolunk">
+            <h1>✨ Rólunk</h1>
+            
+            <h2>Kincsek Művészeti Klub bemutatása</h2>
+            <p><em>Minden gyermek egy kincs - nálunk épp úgy vigyázunk rá, mint otthon</em></p>
+            
+            <p><strong>Volt egyszer egy álom...</strong> Egy álom arról, hogy legyen egy hely, ahol a gyerekek biztonságban lehetnek, és szabadon szárnyalhatnak. Egy hely, ahol minden kis kéz megérintheti a varázslatot, és minden kis lélek megtalálja a saját fényét.</p>
+            
+            <p>Van egy pillanat, mikor a gyermek ujján végigfut a festék -- és egy aprócska nap ragyog fel a papíron. Egy másikban megmozdul a kéz, és a levegő hirtelen táncra perdül körülötte. Néha halk dallam születik, máskor egy egész mesevilág. Ezek a kis csodák vezettek minket a Művészeti Klub megálmodásához -- egy helyhez, ahol az álmok valóra válnak, és ahol együtt őrizzük a kreativitás kincseit.</p>
+            
+            <p>Ez az álom ma valóság: a <strong>Kincsek -- Művészeti Klub</strong>. Egy hely, amit szeretettel és hittel hoztunk létre, ahol a művészet tanítás, gyógyító ölelés, játék, közösség és önkifejezés.</p>
+            
+            <p>Itt minden alkotás apró csoda, minden dallam új remény, és minden tánclépés a gyermeki lélek szabad szárnyalása. Ez a klub olyan tér, ahol a gyermekek álmai életre kelnek, és ahol a szülők, pedagógusok és gyerekek együtt írják ennek az álomnak a történetét.</p>
+            
+            <p>A Kincsek -- Művészeti Klub több mint egy hely -- ez egy élő álom, amely minden nap új életre kel a gyerekek ragyogó szemeiben és a közös öröm pillanataiban.</p>
+            
+            <p><strong>Gyere, lépj be te is ebbe az álomba, és váljunk együtt a kincsek őrzőivé!</strong></p>
+            
+            <h2>Bemutatkozás</h2>
+            <p>Mi vagyunk <strong>Edina és Zita</strong>, ikertestvérek, pedagógusok, és a Kincsek Művészeti Klub megálmodói.</p>
+            
+            <p>Elkötelezett pedagógusokként hoztuk létre a Kincsek Művészeti Klubbot, hogy szakmai tudásunkat és emberi értékeinket egy szeretetteljes közösségben egyesítsük.</p>
+            
+            <p><strong>13 évig voltunk óvodapedagógusok</strong> a IX. kerületben, és ezalatt megerősödött bennünk, hogy minden gyermek egy kincs, tele felfedeznivalóval, csodával, lehetőséggel. A Kincsek Klubban ehhez nyugodt, elfogadó és vidám környezetet biztosítunk, ahol a játék, a fejlődés és a biztonság egyszerre van jelen.</p>
+            
+            <h3>👧 Edina</h3>
+            <p>Óvodapedagógus és néptáncpedagógus, aki örömmel vezeti be a gyerekeket a mozgás, a zene és a hagyományok világába. Foglalkozásai játékosak, vidámak, tele ritmussal és élményekkel, ahol minden kisgyermek bátran kipróbálhatja magát, és szabadon kibontakozhat. Nála mindig van hely a nevetésnek, a mozgásnak, és az önfeledt alkotásnak.</p>
+            
+            <h3>👧 Zita</h3>
+            <p>Óvodapedagógus, valamint család- és gyermekvédelem szakos pedagógus, aki munkája során tudatosan figyel a gyermekek érzelmi szükségleteire. Hangsúlyt fektet arra, hogy minden gyermek egyéni tempóban, saját személyiségéhez illeszkedve bontakozhasson ki egy biztonságos, elfogadó környezetben. A kapcsolódás, az odafigyelés és a szeretetteljes jelenlét pedagógiai alapértékei közé tartoznak.</p>
+            
+            <p>Testvérként és kollégaként is erős egységet alkotunk, közös értékrend, sokéves tapasztalat és valódi összhang jellemzi a munkánkat. Ikrekként sokszor már szavak nélkül is értjük egymást, ezt az egységet és figyelmet a gyerekek és a szülők is érzik, és ez az, amitől a Kincsek Klub igazán különleges.</p>
+            
+            <p><strong>Ha szeretnéd, hogy gyermeked egy biztonságos, szeretetteljes környezetben játsszon, fejlődjön és önmaga lehessen, akkor a Kincsek Klubban jó helyen jártok.</strong></p>
+            
+            <p><em>Szeretettel várunk!</em></p>
+        </section>
+
         <section id="programjaink">
             <h1>🎭 Programjaink</h1>
             <p>A <strong>Kincsek Művészeti Klub</strong> változatos <strong>művészeti programokat és foglalkozásokat</strong> kínál gyerekeknek Budapesten. Minden programunk a kreativitás fejlesztésére és az önkifejezés támogatására épül.</p>
             
-            <h2>Rendszeres foglalkozások</h2>
-            <p><strong>🎨 Rajzolás és festés:</strong> Akvarell, tempera, pasztell technikák elsajátítása játékos formában. A gyerekek megismerkednek a színekkel, formákkal és különböző rajztechnikákkal.</p>
-            
-            <p><strong>✂️ Kézműves alkotás:</strong> Papírhajtogatás, agyagozás, kollázskészítés, textilfestés és egyéb kreatív technikák. Minden foglalkozás végén a gyerekek hazavihetik saját alkotásukat.</p>
-            
-            <p><strong>🖼️ Művészettörténet gyerekeknek:</strong> Híres festők, művészeti irányzatok megismerése érthető, játékos formában.</p>
-            
-            <h2>Különleges események és programok</h2>
-            <p><strong>🌟 Tematikus workshopok:</strong> Évszakok, ünnepek köré épülő különleges foglalkozások</p>
-            <p><strong>🎪 Nyílt napok:</strong> Ismerkedj meg klubunkkal ingyenes bemutató foglalkozásokon</p>
-            <p><strong>🖼️ Kiállítások:</strong> A gyerekek művei rendszeresen kiállításra kerülnek</p>
-            <p><strong>☀️ Nyári művészeti táborok:</strong> Egyhetes intenzív programok a szünidőben</p>
+            <div class="program-box">
+                <h2>📅 Időszakos gyermekfelügyelet</h2>
+                <p><strong>Nem kell egész napos bölcsőde vagy óvoda -- nálunk akár néhány órára is biztonságban tudhatod gyermekedet!</strong></p>
+                <p>Időszakos gyermekfelügyeletünk ideális megoldás, ha ügyet intéznél, dolgozol, vagy csak szükséged van egy kis feltöltődésre.</p>
+                <p>A gyerekek szeretetteljes környezetben játszanak, fejlődnek és jól érzik magukat.</p>
+            </div>
+
+            <div class="program-box">
+                <h2>🎨 MiniKincsek</h2>
+                <h3>Miniovi hangulat -- családias környezetben!</h3>
+                <p><strong>Ahová örömmel érkezik a kisgyermek -- és ahol szárnyra kapnak a mindennapok.</strong></p>
+                
+                <p>Közösségre vágysz, de még korainak érzed a bölcsit? Pár nyugodt órára lenne szükséged, hogy intézd az ügyeid, dolgozz, vagy csak egy picit feltöltődj? Szeretnéd, ha gyermeked szeretetteljes, biztonságos környezetben ismerkedne a közösségi élettel?</p>
+                
+                <p><strong>Akkor a Kincsek Miniovi nektek való!</strong></p>
+                
+                <h3>Mit kínál a Kincsek Miniovi?</h3>
+                <p>• <strong>1,5 éves kortól óvodakezdésig</strong> várjuk a gyerekeket<br>
+                • Élményalapú, művészeti program: zene, mozgás, mese, kézműveskedés<br>
+                • Családias hangulat, kis létszámú csoport<br>
+                • Szelíd beszoktatás, egyéni igények figyelembevétele<br>
+                • Sok mosoly, elfogadás és játék -- amire igazán szükségük van</p>
+                
+                <h3>Miben segít a Miniovi?</h3>
+                <p>• Kíméletes átmenet az otthon és az óvoda között<br>
+                • Támogatja a szociális készségek fejlődését<br>
+                • Erősíti az önbizalmat, önállóságot<br>
+                • Finoman fejleszti a mozgást, figyelmet, kommunikációt<br>
+                • Rugalmas lehetőséget ad a szülőknek tanulásra, munkára, pihenésre</p>
+                
+                <div class="schedule-table">
+                    <h3>Délelőtti napirend -- Miniovi hangulatban</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Időpont</th>
+                                <th>Tevékenység</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>08:00-08:30</td>
+                                <td>Érkezés, szabad játék, beszélgetés</td>
+                            </tr>
+                            <tr>
+                                <td>08:30-09:00</td>
+                                <td>Mondóka, ének-zene</td>
+                            </tr>
+                            <tr>
+                                <td>09:00-09:30</td>
+                                <td>Kézműves foglalkozás</td>
+                            </tr>
+                            <tr>
+                                <td>09:30-09:45</td>
+                                <td>Tízórai (hozott vagy helyben biztosított: gyümölcs)</td>
+                            </tr>
+                            <tr>
+                                <td>09:45-10:45</td>
+                                <td>Kinti, udvari játék vagy mozgásos foglalkozás</td>
+                            </tr>
+                            <tr>
+                                <td>10:45-11:45</td>
+                                <td>Szabad játék, kreatív tevékenységek</td>
+                            </tr>
+                            <tr>
+                                <td>11:45-12:00</td>
+                                <td>Búcsú, hazamenetel előkészítése</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <p><strong>Nyitvatartás:</strong> Hétfőtől csütörtökig: 8:00-12:00<br>
+                <em>(Csatlakozás folyamatos, a szabad férőhelyek függvényében.)</em></p>
+            </div>
+
+            <div class="program-box">
+                <h2>💃 Népi játék és néptánc foglalkozások</h2>
+                <p><strong>Minden hétfőn 16:30-tól</strong> a bölcsis korosztályú legkisebbeket,<br>
+                <strong>minden kedden 16:30-tól</strong> pedig az óvodás korú gyerekeket várjuk néptáncfoglalkozásra.</p>
+                
+                <p>A néptánc fejleszti a mozgáskoordinációt, ritmusérzéket, figyelmet és közösségi élményt ad, miközben a gyerekek játékosan ismerkednek a magyar néphagyományokkal.</p>
+            </div>
+
+            <div class="program-box">
+                <h2>✂️ Kézműves műhely -- két hetente</h2>
+                <p>A gyerekek megismerkedhetnek népi hagyományos kézműves technikákkal (pl. nemezelés, agyagozás, szövés, fonás), valamint egyéb kreatív módszerekkel (pl. quilling, decoupage, varrás, papírművészet, újrahasznosított alapanyagok felhasználása).</p>
+                
+                <p>A foglalkozások célja a kreativitás, kézügyesség és önkifejezés fejlesztése minden korosztály számára.</p>
+                
+                <p><em>Korosztályi részvétel: A kisebb gyermekek szülővel együtt vehetnek részt.</em></p>
+            </div>
+
+            <div class="program-box">
+                <h2>📚 Kincsek OviSuli -- iskolaelőkészítő</h2>
+                <p>Szeretettel várjuk a nagycsoportos óvodásokat játékos, élményalapú iskola-előkészítő programunkra, <strong>minden pénteken 8:30-15:00</strong> között!</p>
+                
+                <p>A foglalkozások során figyelmet, koncentrációt, szociális készségeket és iskolai alapképességeket fejlesztünk, mindeközben a gyerekek biztonságos, szeretetteljes közegben készülhetnek az iskolára.</p>
+                
+                <h3>A program különlegességei:</h3>
+                <p>• <strong>Kirándulások</strong> -- szabadidős, kulturális és tanulási célú élményekkel<br>
+                • <strong>Robotika foglalkozás</strong> -- ismerkedés a modern technológiával játékosan<br>
+                • <strong>Kreatív, fejlesztő és mozgásos játékok</strong> -- a gyerekek életkori sajátosságaihoz igazítva</p>
+                
+                <p><strong>⚠️ Kérjük, hozzanak magukkal egy sima, nagyalakú füzetet!</strong></p>
+                <p><strong>⚠️ A helyek száma korlátozott!</strong></p>
+            </div>
+
+            <div class="program-box">
+                <h2>🎂 Szülinap</h2>
+                <h3>Ünnepeljetek velünk a Kincsek Művészeti Klubban!</h3>
+                <p>Egy különleges születésnap, tele élménnyel, játékossággal és szeretettel -- gyerekekre hangolva!</p>
+                
+                <p>Szeretnétek egy emlékezetes, kreatív és gondtalan születésnapi ünneplést? Akkor ünnepeljetek nálunk! A Kincsek Művészeti Klubban olyan szülinapi alkalmakat szervezünk, ahol a jókedv, a játék, az alkotás és a gondoskodás kéz a kézben jár.</p>
+                
+                <h3>Miért pont nálunk?</h3>
+                <p>• Egyedi hangulatú, gyermekközpontú tér<br>
+                • Kézműves, mozgásos, néptáncos, zenei élményprogram<br>
+                • Rugalmas lehetőségek: szülőkkel együtt, vagy akár szülők nélkül</p>
+                
+                <h3>Amit kínálunk:</h3>
+                <p>• Szülinapi dekoráció<br>
+                • Választható művészeti vagy játékos foglalkozás<br>
+                • Kézműves ajándékkészítés<br>
+                • Születésnapi tortázás lehetősége (igény szerint)</p>
+                
+                <h3>🎈 Szülőkkel közös ünneplés</h3>
+                <p><strong>Közös élmény a családnak -- gyerekekkel, felnőttekkel, mindenki örömére!</strong></p>
+                <p><strong>Időtartam:</strong> kb. 2 óra</p>
+                <p><strong>Program tartalma:</strong><br>
+                • Népi játékok és körjátékok, amiket együtt játszhattok<br>
+                • Egyszerű, örömteli tánclépések, közös énekléssel<br>
+                • Kreatív kézműveskedés -- amit haza is vihettek<br>
+                • Végül: tortaköszöntő és ajándékátadás bensőséges hangulatban</p>
+                <p><em>Ajánljuk kisebb gyermekeknek (2-6 év), vagy olyan családoknak, ahol a közös ünneplés a lényeg.</em></p>
+                
+                <h3>🎉 Gyermekzsúr szülők nélkül</h3>
+                <p><strong>Ti elengeditek -- mi gondoskodunk a szórakozásról!</strong></p>
+                <p><strong>Időtartam:</strong> kb. 2,5-3 óra</p>
+                <p><strong>Program tartalma:</strong><br>
+                • Interaktív néptáncos foglalkozás sok mozgással, játékos tanítással<br>
+                • Vidám vetélkedő csapatokban, mindenki örömére<br>
+                • Kézműveskedés -- minden gyermek saját alkotással térhet haza<br>
+                • Tortaköszöntő és ajándékátadó zárásként</p>
+                <p><em>Ajánljuk nagyobb óvodás és kisiskolás korosztálynak (4-9 év), ahol a gyerekek már örömmel ünnepelnek önállóan is.</em></p>
+                
+                <h3>⏰ Időpontfoglalás</h3>
+                <p><strong>Tervezzetek előre!</strong> Hogy minden gördülékenyen, örömtelien alakuljon, kérjük, a szülinapi programot legalább 2-3 héttel korábban foglaljátok le. Így biztosíthatjuk az ünnepeltnek a legkincsesebb élményt!</p>
+                
+                <p><strong>Jelentkezés:</strong><br>
+                Suki Edina -- 06 20 523 2799<br>
+                Suki Zita -- 06 20 523 6466</p>
+            </div>
             
             <p><em>A foglalkozások időpontjairól és aktuális programjainkról érdeklődj elérhetőségeinken!</em></p>
-        </section>
-
-        <section id="aktualitasok">
-            <h1>📢 Aktualitások</h1>
-            <p>Kövesd nyomon a <strong>Kincsek Művészeti Klub legfrissebb híréit</strong>, eseményeit és programjait! Itt mindig megtalálod a legújabb információkat foglalkozásainkról és különleges rendezvényeinkről.</p>
-            
-            <h2>🎨 Aktuális események</h2>
-            <p><em>Hamarosan frissítjük a legújabb programokkal és eseményekkel. Kövess minket közösségi médián, hogy ne maradj le semmiről!</em></p>
-            
-            <h2>📅 Beiratkozás</h2>
-            <p>Folyamatosan várjuk új tagjaink jelentkezését! Töltsd ki a Csatlakozz menüpontban található űrlapot, és hamarosan felvesszük veled a kapcsolatot.</p>
         </section>
 
        <section id="kepek">
@@ -510,49 +748,36 @@
             <p>Tekintsd meg a <strong>Kincsek Művészeti Klub</strong> legszebb pillanatait! Foglalkozásaink, gyerekek alkotásai, különleges rendezvényeink képekben.</p>
             <div class="gallery">
                 <div class="gallery-item">
-                    <img src="kep1.jpg" alt="Gyerek alkotások">
+                    <img src="kep1.jpg" alt="Gyerek alkotások" onerror="this.parentElement.innerHTML='Kép 1'">
                 </div>
                 <div class="gallery-item">
-                    <img src="kep2.jpg" alt="Festési foglalkozás">
+                    <img src="kep2.jpg" alt="Festési foglalkozás" onerror="this.parentElement.innerHTML='Kép 2'">
                 </div>
                 <div class="gallery-item">
-                    <img src="kep3.jpg" alt="Kézműves workshop">
+                    <img src="kep3.jpg" alt="Kézműves workshop" onerror="this.parentElement.innerHTML='Kép 3'">
                 </div>
                 <div class="gallery-item">
-                    <img src="kep4.jpg" alt="Csoportos alkotás">
+                    <img src="kep4.jpg" alt="Csoportos alkotás" onerror="this.parentElement.innerHTML='Kép 4'">
                 </div>
                 <div class="gallery-item">
-                    <img src="kep5.jpg" alt="Művészeti kiállítás">
+                    <img src="kep5.jpg" alt="Művészeti kiállítás" onerror="this.parentElement.innerHTML='Kép 5'">
                 </div>
                 <div class="gallery-item">
-                    <img src="kep6.jpg" alt="Nyári tábor">
+                    <img src="kep6.jpg" alt="Nyári tábor" onerror="this.parentElement.innerHTML='Kép 6'">
                 </div>
                 <div class="gallery-item">
-                    <img src="kep7.jpg" alt="Rajzolás közben">
+                    <img src="kep7.jpg" alt="Rajzolás közben" onerror="this.parentElement.innerHTML='Kép 7'">
                 </div>
                 <div class="gallery-item">
-                    <img src="kep8.jpg" alt="Kreatív foglalkozás">
+                    <img src="kep8.jpg" alt="Kreatív foglalkozás" onerror="this.parentElement.innerHTML='Kép 8'">
                 </div>
             </div>
             <p style="margin-top: 2rem;"><em>Hamarosan további képekkel bővítjük galériánkat!</em></p>
-            <style>
-                .gallery-item {
-                    border-radius: 20px;
-                    overflow: hidden;
-                }
-                
-                .gallery-item img {
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                    display: block;
-                }
-            </style>
         </section>
 
         <section id="csatlakozz">
             <h1>✨ Csatlakozz hozzánk!</h1>
-            <p>Szeretnéd, ha gyermeked részt venne a <strong>Kincsek Művészeti Klub</strong> kreatív foglalkozásain? Töltsd ki az alább <strong>jelentkezési űrlapot</strong>, és munkatársunk 1-2 munkanapon belül felveszi veled a kapcsolatot!</p>
+            <p>Szeretnéd, ha gyermeked részt venne a <strong>Kincsek Művészeti Klub</strong> kreatív foglalkozásain? Töltsd ki az alábbi <strong>jelentkezési űrlapot</strong>, és munkatársunk 1-2 munkanapon belül felveszi veled a kapcsolatot!</p>
             <p>📍 Helyszín: <strong>Budapest, IX. kerület, Tűzoltó utca 68.</strong></p>
             <iframe src="https://forms.gle/hgs28EfQhqnyL2Tw6" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0">Betöltés...</iframe>
         </section>
@@ -563,7 +788,17 @@
             <h2>Elérhetőségeink</h2>
             <p><strong>📍 Cím:</strong> 1094 Budapest, Tűzoltó utca 68.</p>
             <p><strong>📧 Email:</strong> <a href="mailto:edina@kincsek.com" style="color: #ff69b4; text-decoration: none; font-weight: bold;">edina@kincsek.com</a></p>
-            <p><strong>📱 Telefon:</strong> <a href="tel:+36205232799" style="color: #ff69b4; text-decoration: none; font-weight: bold;">+36 20 523 2799</a></p>
+            <p><strong>📧 Email:</strong> <a href="mailto:zitasuki0315@gmail.com" style="color: #ff69b4; text-decoration: none; font-weight: bold;">zitasuki0315@gmail.com</a></p>
+            <p><strong>📱 Telefon (Edina):</strong> <a href="tel:+36205232799" style="color: #ff69b4; text-decoration: none; font-weight: bold;">+36 20 523 2799</a></p>
+            <p><strong>📱 Telefon (Zita):</strong> <a href="tel:+36205236466" style="color: #ff69b4; text-decoration: none; font-weight: bold;">+36 20 523 6466</a></p>
+            
+            <h2>Közösségi média</h2>
+            <p>Kövess minket közösségi oldalakon és maradj naprakész a legfrissebb programjainkkal!</p>
+            <div class="social-links">
+                <a href="https://www.facebook.com/kincsekklub" target="_blank">📘 Facebook</a>
+                <a href="https://www.instagram.com/kincsekklub" target="_blank">📷 Instagram</a>
+                <a href="https://www.tiktok.com/@kincsek" target="_blank">🎵 TikTok</a>
+            </div>
         </section>
 
 <section id="adatkezeles">
@@ -571,7 +806,7 @@
             
             <h2>1. Adatkezelő</h2>
             <p><strong>Név:</strong> Suki Edina<br>
-            <strong>Főtevékenysége:</strong> Kulturális képzés szakkör keretében<br>
+            <strong>Fő tevékenysége:</strong> Kulturális képzés szakkör keretében<br>
             <strong>Tevékenység:</strong> M.n.s. egyéb szabadidős tevékenység, Gyermekfelügyelet, a gyermekvédelmi törvény hatályan kívüli szolgáltatásként<br>
             <strong>Székhely:</strong> 5137 Jászkisér, Tompa Mihály utca 4.<br>
             <strong>Működési hely:</strong> 1094 Budapest, Tűzoltó utca 68.<br>
@@ -615,7 +850,7 @@
             Email: edina@kincsek.com<br>
             Telefon: +36 20 523 2799</p>
             <p><strong>Nemzeti Adatvédelmi és Információszabadság Hatóság (NAIH):</strong><br>
-            Cím: 1125 Budapest, Dezső utca 37.<br>
+            Cím: 1125 Budapest, Dezsö utca 37.<br>
             Email: ugyfelszolgalat@naih.hu<br>
             Telefon: +36 1 391 1400<br>
             Weboldal: www.naih.hu</p>
@@ -667,7 +902,7 @@
 
         document.querySelector('.logo').addEventListener('click', () => {
             sections.forEach(section => section.classList.remove('active'));
-            document.getElementById('rolunk').classList.add('active');
+            document.getElementById('fooldal').classList.add('active');
             window.scrollTo({ top: 0, behavior: 'smooth' });
             
             if (window.innerWidth < 768) {
@@ -691,26 +926,6 @@
                 
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             });
-        });
-
-        document.getElementById('joinForm').addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
-            const formData = new FormData(e.target);
-            const data = {
-                name: formData.get('name'),
-                email: formData.get('email'),
-                phone: formData.get('phone'),
-                age: formData.get('age'),
-                message: formData.get('message')
-            };
-            
-            const mailtoLink = `mailto:edina@kincsek.com?subject=Új jelentkezés - ${data.name}&body=Név: ${data.name}%0D%0AEmail: ${data.email}%0D%0ATelefon: ${data.phone}%0D%0AGyermek életkora: ${data.age}%0D%0A%0D%0AÜzenet:%0D%0A${data.message}`;
-            
-            window.location.href = mailtoLink;
-            
-            alert('Az email program megnyílik. Kérlek, küldd el az üzenetet!');
-            e.target.reset();
         });
     </script>
 </body>
