@@ -587,21 +587,29 @@
                 <div class="col-md-6">
                     <div class="contact-info">
                         <h4 class="mb-4" style="color: var(--primary-color);">Írj nekünk!</h4>
-                        <form>
-                            <div class="mb-3">
-                                <label for="name" class="form-label">Név</label>
-                                <input type="text" class="form-control" id="name" placeholder="Add meg a neved">
-                            </div>
-                            <div class="mb-3">
-                                <label for="email" class="form-label">Email cím</label>
-                                <input type="email" class="form-control" id="email" placeholder="pelda@email.hu">
-                            </div>
-                            <div class="mb-3">
-                                <label for="message" class="form-label">Üzenet</label>
-                                <textarea class="form-control" id="message" rows="5" placeholder="Írj nekünk..."></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-custom w-100">Küldés</button>
-                        </form>
+                        <form id="contactForm">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Név</label>
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Add meg a neved" required>
+                            <!-- ☝️ Ez a name="name" FONTOS! -->
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email cím</label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="pelda@email.hu" required>
+                            <!-- ☝️ Ez a name="email" FONTOS! -->
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Üzenet</label>
+                            <textarea class="form-control" id="message" name="message" rows="5" placeholder="Írj nekünk..." required></textarea>
+                            <!-- ☝️ Ez a name="message" FONTOS! -->
+                        </div>
+                        <button type="submit" class="btn btn-custom w-100">
+                            <span class="btn-text">Küldés</span>
+                            <span class="btn-loading" style="display: none;">
+                                <i class="fas fa-spinner fa-spin"></i> Küldés...
+                            </span>
+                        </button>
+                    </form>
                     </div>
                 </div>
             </div>
@@ -743,6 +751,38 @@
             } else {
                 navbar.style.background = 'rgba(45, 53, 97, 0.95)';
             }
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<!-- EmailJS script - illeszd be a </body> elé -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        emailjs.init("yHdd5Q4LK9vNVJ8d9"); // Ide jön a Public Key az EmailJS-ről
+
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const btnText = submitBtn.querySelector('.btn-text');
+            const btnLoading = submitBtn.querySelector('.btn-loading');
+            
+            submitBtn.disabled = true;
+            btnText.style.display = 'none';
+            btnLoading.style.display = 'inline';
+            
+            emailjs.sendForm('service_mk3ozra', 'template_gosh0qq', this)
+                .then(function() {
+                    alert('✅ Üzenet sikeresen elküldve!');
+                    document.getElementById('contactForm').reset();
+                    submitBtn.disabled = false;
+                    btnText.style.display = 'inline';
+                    btnLoading.style.display = 'none';
+                }, function(error) {
+                    alert('❌ Hiba történt: ' + error.text);
+                    submitBtn.disabled = false;
+                    btnText.style.display = 'inline';
+                    btnLoading.style.display = 'none';
+                });
         });
     </script>
 
