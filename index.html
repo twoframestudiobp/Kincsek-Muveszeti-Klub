@@ -14,22 +14,18 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdn.jsdelivr.net">
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-    <link rel="preconnect" href="https://unpkg.com">
 
-    <!-- Google Fonts loaded directly via link to prevent @import waterfall -->
-    <link rel="preload" as="style"
-        href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&family=Quicksand:wght@400;600;700&display=swap">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&family=Quicksand:wght@400;600;700&display=swap"
-        media="print" onload="this.media='all'">
+    <!-- Google Fonts optimized weights with display=swap -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Quicksand:wght@700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Quicksand:wght@700&display=swap" media="print" onload="this.media='all'">
     <noscript>
-        <link rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&family=Quicksand:wght@400;600;700&display=swap">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Quicksand:wght@700&display=swap">
     </noscript>
 
-    <!-- CSS Dependencies (Preloaded and non-blocking) -->
+    <!-- CSS Dependencies (100% Non-blocking) -->
     <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" as="style">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"></noscript>
     
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
@@ -93,6 +89,39 @@
             font-weight: 700;
             color: var(--dark);
         }
+
+        /* Core Layout Helpers (Critical CSS for zero render blocking) */
+        .container {
+            width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
+            max-width: 1320px;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin-right: -12px;
+            margin-left: -12px;
+        }
+
+        .row > * {
+            box-sizing: border-box;
+            flex-shrink: 0;
+            width: 100%;
+            max-width: 100%;
+            padding-right: 12px;
+            padding-left: 12px;
+        }
+
+        .d-flex { display: flex !important; }
+        .text-center { text-align: center !important; }
+        .w-100 { width: 100% !important; }
+        .align-items-center { align-items: center !important; }
+        .justify-content-center { justify-content: center !important; }
+        .h-100 { height: 100% !important; }
 
         /* Glassmorphism Utility */
         .glass {
@@ -970,7 +999,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" defer></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js" defer></script>
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
@@ -1000,13 +1028,32 @@
                 }
             }, { passive: true });
 
-            // EmailJS Init
-            if (typeof emailjs !== 'undefined') {
-                emailjs.init("yHdd5Q4LK9vNVJ8d9");
+            // On-demand EmailJS loader (reduces initial JS payload)
+            let emailJsReady = false;
+            function initEmailJs(callback) {
+                if (emailJsReady && typeof emailjs !== 'undefined') {
+                    if (callback) callback();
+                    return;
+                }
+                const script = document.createElement('script');
+                script.src = 'https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js';
+                script.onload = function() {
+                    if (typeof emailjs !== 'undefined') {
+                        emailjs.init("yHdd5Q4LK9vNVJ8d9");
+                        emailJsReady = true;
+                        if (callback) callback();
+                    }
+                };
+                document.head.appendChild(script);
             }
 
             const contactForm = document.getElementById('contactForm');
             if (contactForm) {
+                // Preload EmailJS when user focuses on any input
+                contactForm.addEventListener('focusin', function() {
+                    initEmailJs();
+                }, { once: true });
+
                 contactForm.addEventListener('submit', function (e) {
                     e.preventDefault();
                     const submitBtn = this.querySelector('button[type="submit"]');
@@ -1017,19 +1064,21 @@
                     btnText.style.display = 'none';
                     btnLoading.style.display = 'inline';
 
-                    emailjs.sendForm('service_mk3ozra', 'template_gosh0qq', this)
-                        .then(function () {
-                            alert('✅ Üzenet sikeresen elküldve!');
-                            contactForm.reset();
-                            submitBtn.disabled = false;
-                            btnText.style.display = 'inline';
-                            btnLoading.style.display = 'none';
-                        }, function (error) {
-                            alert('❌ Hiba történt: ' + error.text);
-                            submitBtn.disabled = false;
-                            btnText.style.display = 'inline';
-                            btnLoading.style.display = 'none';
-                        });
+                    initEmailJs(function() {
+                        emailjs.sendForm('service_mk3ozra', 'template_gosh0qq', contactForm)
+                            .then(function () {
+                                alert('✅ Üzenet sikeresen elküldve!');
+                                contactForm.reset();
+                                submitBtn.disabled = false;
+                                btnText.style.display = 'inline';
+                                btnLoading.style.display = 'none';
+                            }, function (error) {
+                                alert('❌ Hiba történt: ' + error.text);
+                                submitBtn.disabled = false;
+                                btnText.style.display = 'inline';
+                                btnLoading.style.display = 'none';
+                            });
+                    });
                 });
             }
 
