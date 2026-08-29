@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="hu">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kincsek Művészeti Klub - Gyermek Művészeti Foglalkozások Budapest</title>
     <meta name="google-site-verification" content="HKlzUPmHD8VxrBPyCwuBod6qoaBMAw-da0T028qw_8s" />
-    <meta name="description" content="Kincsek Művészeti Klub - kreatív művészeti foglalkozások gyerekeknek Budapesten. Rajzolás, festés, kézműves programok szerető környezetben.">
-    
+    <meta name="description"
+        content="Kincsek Művészeti Klub - kreatív művészeti foglalkozások gyerekeknek Budapesten. Rajzolás, festés, kézműves programok szerető környezetben.">
+
     <!-- Preconnect to external asset origins -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,16 +17,27 @@
     <link rel="preconnect" href="https://unpkg.com">
 
     <!-- Google Fonts loaded directly via link to prevent @import waterfall -->
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&family=Quicksand:wght@400;600;700&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&family=Quicksand:wght@400;600;700&display=swap" media="print" onload="this.media='all'">
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&family=Quicksand:wght@400;600;700&display=swap">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&family=Quicksand:wght@400;600;700&display=swap"
+        media="print" onload="this.media='all'">
     <noscript>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&family=Quicksand:wght@400;600;700&display=swap">
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&family=Quicksand:wght@400;600;700&display=swap">
     </noscript>
 
-    <!-- CSS Dependencies -->
+    <!-- CSS Dependencies (Preloaded and non-blocking) -->
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" as="style">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+
+    <link rel="preload" href="https://unpkg.com/aos@2.3.1/dist/aos.css" as="style">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"></noscript>
 
     <!-- Favicon és logó metaadatok -->
     <link rel="icon" href="/favicon.webp" type="image/webp" sizes="512x512">
@@ -70,7 +83,12 @@
             scroll-behavior: smooth;
         }
 
-        h1, h2, h3, h4, h5, h6 {
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
             font-family: 'Quicksand', system-ui, -apple-system, sans-serif;
             font-weight: 700;
             color: var(--dark);
@@ -133,8 +151,8 @@
         .hero-section {
             min-height: 100vh;
             background: radial-gradient(circle at top right, #4ecdc4, transparent),
-                        radial-gradient(circle at bottom left, #7ac943, transparent),
-                        linear-gradient(135deg, #1a1f3a 0%, #2d3561 100%);
+                radial-gradient(circle at bottom left, #7ac943, transparent),
+                linear-gradient(135deg, #1a1f3a 0%, #2d3561 100%);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -154,8 +172,13 @@
         }
 
         @keyframes move {
-            from { transform: translate(0, 0) rotate(0deg); }
-            to { transform: translate(100px, 100px) rotate(360deg); }
+            from {
+                transform: translate(0, 0) rotate(0deg);
+            }
+
+            to {
+                transform: translate(100px, 100px) rotate(360deg);
+            }
         }
 
         .hero-content {
@@ -172,7 +195,7 @@
             color: white;
             line-height: 1.1;
             margin-bottom: 1.5rem;
-            text-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            text-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
 
         .hero-content p {
@@ -205,7 +228,8 @@
             position: relative;
         }
 
-        #galeria, #kapcsolat {
+        #galeria,
+        #kapcsolat {
             content-visibility: auto;
             contain-intrinsic-size: 1px 700px;
         }
@@ -257,7 +281,7 @@
 
         .about-image-wrapper img {
             border-radius: 30px;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
             position: relative;
             z-index: 1;
             width: 100%;
@@ -288,12 +312,12 @@
             position: relative;
             overflow: hidden;
             background: white;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
         }
 
         .program-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 25px 50px rgba(0,0,0,0.1);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
         }
 
         .program-card::before {
@@ -407,14 +431,14 @@
         footer {
             background: #0d1117;
             padding: 80px 0 30px;
-            color: rgba(255,255,255,0.7);
+            color: rgba(255, 255, 255, 0.7);
         }
 
         .social-circle {
             width: 50px;
             height: 50px;
             border-radius: 50%;
-            background: rgba(255,255,255,0.05);
+            background: rgba(255, 255, 255, 0.05);
             display: inline-flex;
             align-items: center;
             justify-content: center;
@@ -445,28 +469,40 @@
         }
 
         @media (max-width: 768px) {
-            section { padding: 60px 0; }
-            .hero-content h1 { font-size: 3rem; }
-            .contact-glass { padding: 1.5rem; }
+            section {
+                padding: 60px 0;
+            }
+
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+
+            .contact-glass {
+                padding: 1.5rem;
+            }
         }
     </style>
 </head>
+
 <body>
 
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center" href="#hero">
-                <img src="Kincsek logo.webp" alt="Kincsek Művészeti Klub Logo" width="50" height="50" style="height: 50px; width: 50px; object-fit: cover; border-radius: 10px; margin-right: 12px;" decoding="async">
+                <img src="Kincsek logo.webp" alt="Kincsek Művészeti Klub Logo" width="50" height="50"
+                    style="height: 50px; width: 50px; object-fit: cover; border-radius: 10px; margin-right: 12px;"
+                    decoding="async">
                 <span>Kincsek-Művészeti Klub</span>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Menü megnyitása">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-label="Menü megnyitása">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="#rolunk">Rólunk</a></li>
                     <li class="nav-item"><a class="nav-link" href="#programjaink">Programjaink</a></li>
-                  <!--<li class="nav-item"><a class="nav-link" href="#velemenyek">Vélemények</a></li>  -->
+                    <!--<li class="nav-item"><a class="nav-link" href="#velemenyek">Vélemények</a></li>  -->
                     <li class="nav-item"><a class="nav-link" href="#galeria">Galéria</a></li>
                     <li class="nav-item"><a class="nav-link" href="#kapcsolat">Kapcsolat</a></li>
                 </ul>
@@ -475,22 +511,31 @@
     </nav>
 
     <section id="hero" class="hero-section">
-        <div class="hero-shape" style="width: 400px; height: 400px; background: var(--secondary); top: -100px; left: -100px;"></div>
-        <div class="hero-shape" style="width: 300px; height: 300px; background: var(--primary); bottom: -50px; right: -50px;"></div>
+        <div class="hero-shape"
+            style="width: 400px; height: 400px; background: var(--secondary); top: -100px; left: -100px;"></div>
+        <div class="hero-shape"
+            style="width: 300px; height: 300px; background: var(--primary); bottom: -50px; right: -50px;"></div>
         <div class="container text-center">
-            <div class="hero-content" data-aos="zoom-out" data-aos-duration="1500">
-                <h1 class="display-1 fw-bold">Kreativitás, Játék,<br><span style="color: var(--accent);">Közösség</span></h1>
-                <p class="lead">Ahol minden gyermek kincs, és a művészet szárnyra kel. Fedezd fel gyermekeid rejtett tehetségeit nálunk!</p>
+            <div class="hero-content">
+                <h1 class="display-1 fw-bold">Kreativitás, Játék,<br><span style="color: var(--accent);">Közösség</span>
+                </h1>
+                <p class="lead">Ahol minden gyermek kincs, és a művészet szárnyra kel. Fedezd fel gyermekeid rejtett
+                    tehetségeit nálunk!</p>
                 <div class="d-flex flex-column align-items-center gap-3">
-                    <a href="#programjaink" class="btn btn-premium w-100" style="max-width: 400px;">Programjaink felfedezése</a>
-                    <a href="#kapcsolat" class="btn btn-outline-light rounded-pill px-5 py-3 fw-bold w-100" style="max-width: 400px;">Kapcsolatfelvétel</a>
+                    <a href="#programjaink" class="btn btn-premium w-100" style="max-width: 400px;">Programjaink
+                        felfedezése</a>
+                    <a href="#kapcsolat" class="btn btn-outline-light rounded-pill px-5 py-3 fw-bold w-100"
+                        style="max-width: 400px;">Kapcsolatfelvétel</a>
                 </div>
             </div>
         </div>
-        
+
         <div class="wave-divider">
-            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                preserveAspectRatio="none">
+                <path
+                    d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                    class="shape-fill"></path>
             </svg>
         </div>
     </section>
@@ -501,29 +546,46 @@
                 <h2 class="section-title">Rólunk</h2>
                 <p class="lead">Minden gyermek egy kincs - nálunk épp úgy vigyázunk rá, mint otthon</p>
             </div>
-            
+
             <div class="row align-items-center mb-5">
                 <div class="col-md-5 mb-4 mb-md-0" data-aos="fade-right">
                     <div class="about-image-wrapper">
-                        <img src="EdinaesZita.webp" alt="Edina és Zita" class="img-fluid" width="500" height="400" loading="lazy" decoding="async">
+                        <img src="EdinaesZita.webp" alt="Edina és Zita" class="img-fluid" width="500" height="400"
+                            loading="lazy" decoding="async">
                     </div>
                 </div>
                 <div class="col-md-7 ps-lg-5" data-aos="fade-left">
                     <div class="about-text-block">
                         <h3 class="mb-4">Mi vagyunk <span style="color: var(--primary);">Edina és Zita</span> </h3>
                         <p class="mb-4 fw-bold">Ikertestvérek, pedagógusok, és a Kincsek Művészeti Klub megálmodói.</p>
-                        
-                        <p>Elkötelezett pedagógusokként hoztuk létre a Kincsek Művészeti Klubbot, hogy szakmai tudásunkat és emberi értékeinket egy szeretetteljes közösségben egyesítsük.</p>
-                        
-                        <p>13 évig voltunk óvodapedagógusok a IX. kerületben, és ezalatt megerősödött bennünk, hogy minden gyermek egy kincs, tele felfedeznivalóval, csodával, lehetőséggel. A Kincsek Klubban ehhez nyugodt, elfogadó és vidám környezetet biztosítunk, ahol a játék, a fejlődés és a biztonság egyszerre van jelen.</p>
-                        
-                        <p><strong>Edina</strong>, óvodapedagógus és néptáncpedagógus, aki örömmel vezeti be a gyerekeket a mozgás, a zene és a hagyományok világába. Foglalkozásai játékosak, vidámak, tele ritmussal és élményekkel, ahol minden kisgyermek bátran kipróbálhatja magát, és szabadon kibontakozhat. Nála mindig van hely a nevetésnek, a mozgásnak, és az önfeledt alkotásnak.</p>
-                        
-                        <p><strong>Zita</strong> óvodapedagógus, valamint család- és gyermekvédelem szakos pedagógus, aki munkája során tudatosan figyel a gyermekek érzelmi szükségleteire. Hangsúlyt fektet arra, hogy minden gyermek egyéni tempóban, saját személyiségéhez illeszkedve bontakozhasson ki egy biztonságos, elfogadó környezetben. A kapcsolódás, az odafigyelés és a szeretetteljes jelenlét pedagógiai alapértékei közé tartoznak.</p>
+
+                        <p>Elkötelezett pedagógusokként hoztuk létre a Kincsek Művészeti Klubbot, hogy szakmai
+                            tudásunkat és emberi értékeinket egy szeretetteljes közösségben egyesítsük.</p>
+
+                        <p>13 évig voltunk óvodapedagógusok a IX. kerületben, és ezalatt megerősödött bennünk, hogy
+                            minden gyermek egy kincs, tele felfedeznivalóval, csodával, lehetőséggel. A Kincsek Klubban
+                            ehhez nyugodt, elfogadó és vidám környezetet biztosítunk, ahol a játék, a fejlődés és a
+                            biztonság egyszerre van jelen.</p>
+
+                        <p><strong>Edina</strong>, óvodapedagógus és néptáncpedagógus, aki örömmel vezeti be a
+                            gyerekeket a mozgás, a zene és a hagyományok világába. Foglalkozásai játékosak, vidámak,
+                            tele ritmussal és élményekkel, ahol minden kisgyermek bátran kipróbálhatja magát, és
+                            szabadon kibontakozhat. Nála mindig van hely a nevetésnek, a mozgásnak, és az önfeledt
+                            alkotásnak.</p>
+
+                        <p><strong>Zita</strong> óvodapedagógus, valamint család- és gyermekvédelem szakos pedagógus,
+                            aki munkája során tudatosan figyel a gyermekek érzelmi szükségleteire. Hangsúlyt fektet
+                            arra, hogy minden gyermek egyéni tempóban, saját személyiségéhez illeszkedve bontakozhasson
+                            ki egy biztonságos, elfogadó környezetben. A kapcsolódás, az odafigyelés és a szeretetteljes
+                            jelenlét pedagógiai alapértékei közé tartoznak.</p>
 
                         <div class="glass p-4 rounded-4 mt-4">
-                            <p class="mb-3">"Testvérként és kollégaként is erős egységet alkotunk, közös értékrend, sokéves tapasztalat és valódi összhang jellemzi a munkánkat. Ikrekként sokszor már szavak nélkül is értjük egymást, ezt az egységet és figyelmet a gyerekek és a szülők is érzik, és ez az, amitől a Kincsek Klub igazán különleges."</p>
-                            <p class="mb-3">Ha szeretnéd, hogy gyermeked egy biztonságos, szeretetteljes környezetben játsszon, fejlődjön és önmaga lehessen, akkor a Kincsek Klubban jó helyen jártok.</p>
+                            <p class="mb-3">"Testvérként és kollégaként is erős egységet alkotunk, közös értékrend,
+                                sokéves tapasztalat és valódi összhang jellemzi a munkánkat. Ikrekként sokszor már
+                                szavak nélkül is értjük egymást, ezt az egységet és figyelmet a gyerekek és a szülők is
+                                érzik, és ez az, amitől a Kincsek Klub igazán különleges."</p>
+                            <p class="mb-3">Ha szeretnéd, hogy gyermeked egy biztonságos, szeretetteljes környezetben
+                                játsszon, fejlődjön és önmaga lehessen, akkor a Kincsek Klubban jó helyen jártok.</p>
                             <p class="about-signature mt-3 mb-0">Szeretettel várunk! <br>— Suki Edina és Suki Zita</p>
                         </div>
                     </div>
@@ -541,63 +603,57 @@
             <div class="row g-4">
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
                     <div class="program-card">
-                        <!-- <div class="program-icon-box"></div> -->
                         <h5>Biztonság és szeretet, amíg Te intézed a dolgaidat</h5>
-                        <p>Nálunk akár néhány órára is értő kezekben, biztonságban tudhatod gyermekedet. Ideális megoldás a nyugodt ügyintézéshez.</p>
+                        <p>Nálunk akár néhány órára is értő kezekben, biztonságban tudhatod gyermekedet. Ideális
+                            megoldás a nyugodt ügyintézéshez.</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
                     <div class="program-card">
-                        <!-- <div class="program-icon-box"></div> -->
                         <h5>Az első lépések a művészet világában: MiniKincsek</h5>
-                        <p><strong>1,5 éves kortól</strong><br>Varázslatos világ, ahol zene, mozgás és mese segítségével fedezzük fel az alkotás örömét.</p>
+                        <p><strong>1,5 éves kortól</strong><br>Varázslatos világ, ahol zene, mozgás és mese segítségével
+                            fedezzük fel az alkotás örömét.</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
                     <div class="program-card">
-                        <!-- <div class="program-icon-box"></div> -->
                         <h5>Ritmus, tánc és hagyomány: Játékos néptánc</h5>
                         <p>Éld át a mozgás szabadságát és a magyar hagyományok szépségét egy vidám közösségben.</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
                     <div class="program-card">
-                        <!-- <div class="program-icon-box"></div> -->
                         <h5>Alkotás határok nélkül: Kézműves kalandok</h5>
                         <p>Engedd szabadjára a fantáziád! Különleges technikákkal alkotunk maradandó kincseket.</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
                     <div class="program-card">
-                        <!-- <div class="program-icon-box"></div> -->
                         <h5>Magabiztos iskolakezdés vidám közösségben</h5>
                         <p>Iskolaelőkészítő nagycsoportosoknak! Kalandozások és robotika a bátor iskolakezdésért.</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
                     <div class="program-card">
-                        <!-- <div class="program-icon-box"></div> -->
                         <h5>Felejthetetlen születésnapi varázslat</h5>
-                        <p>Ünnepelj nálunk! Kézműves foglalkozás, játék és felhőtlen szórakozás a legjobb barátokkal.</p>
+                        <p>Ünnepelj nálunk! Kézműves foglalkozás, játék és felhőtlen szórakozás a legjobb barátokkal.
+                        </p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
                     <div class="program-card">
-                        <!-- <div class="program-icon-box"></div> -->
                         <h5>A közösség ereje: Vidám Táncház</h5>
                         <p>Mozgás, zene és közös élmény házhoz szállítva óvodákba és iskolákba.</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
                     <div class="program-card">
-                        <!-- <div class="program-icon-box"></div> -->
                         <h5>Varázslatos utazás a mesék szárnyán</h5>
                         <p>Ölbe bújós történetek és közös játék a képzelet birodalmában.</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
                     <div class="program-card">
-                        <!-- <div class="program-icon-box"></div> -->
                         <h5>Színekben rejlő boldogság: Élményfestés</h5>
                         <p>Nem a tökéletesség, hanem az alkotás tiszta öröme és a közös nevetés.</p>
                     </div>
@@ -613,143 +669,163 @@
                 <p class="lead">Pillantás a klubunk varázslatos hétköznapjaiba</p>
             </div>
             <div class="row g-4">
-                <!-- kep6 -->
                 <div class="col-lg-4 col-md-6" data-aos="zoom-in">
-                    <div class="gallery-item" onclick="showImage('kep6.webp')" data-bs-toggle="modal" data-bs-target="#imageModal">
-                        <img src="kep6.webp" alt="Gyermek foglalkozás és játék" width="400" height="300" loading="lazy" decoding="async">
+                    <div class="gallery-item" onclick="showImage('kep6.webp')" data-bs-toggle="modal"
+                        data-bs-target="#imageModal">
+                        <img src="kep6.webp" alt="Gyermek foglalkozás és játék" width="400" height="300" loading="lazy"
+                            decoding="async">
                         <div class="gallery-overlay"><i class="fas fa-search-plus fa-3x text-white"></i></div>
                     </div>
                 </div>
-                <!-- sokadik kep -->
                 <div class="col-lg-4 col-md-6" data-aos="zoom-in">
-                    <div class="gallery-item" onclick="showImage('sokadik kep.webp')" data-bs-toggle="modal" data-bs-target="#imageModal">
-                        <img src="sokadik kep.webp" alt="Kézműves pillanatok" width="400" height="300" loading="lazy" decoding="async">
+                    <div class="gallery-item" onclick="showImage('sokadik kep.webp')" data-bs-toggle="modal"
+                        data-bs-target="#imageModal">
+                        <img src="sokadik kep.webp" alt="Kézműves pillanatok" width="400" height="300" loading="lazy"
+                            decoding="async">
                         <div class="gallery-overlay"><i class="fas fa-search-plus fa-3x text-white"></i></div>
                     </div>
                 </div>
-                <!-- Zita es Edina -->
                 <div class="col-lg-4 col-md-6" data-aos="zoom-in">
-                    <div class="gallery-item" onclick="showImage('Zita es Edina.webp')" data-bs-toggle="modal" data-bs-target="#imageModal">
-                        <img src="Zita es Edina.webp" alt="Zita és Edina a klubban" width="400" height="300" loading="lazy" decoding="async">
+                    <div class="gallery-item" onclick="showImage('Zita es Edina.webp')" data-bs-toggle="modal"
+                        data-bs-target="#imageModal">
+                        <img src="Zita es Edina.webp" alt="Zita és Edina a klubban" width="400" height="300"
+                            loading="lazy" decoding="async">
                         <div class="gallery-overlay"><i class="fas fa-search-plus fa-3x text-white"></i></div>
                     </div>
                 </div>
-                <!-- kep -->
                 <div class="col-lg-4 col-md-6" data-aos="zoom-in">
-                    <div class="gallery-item" onclick="showImage('kep.webp')" data-bs-toggle="modal" data-bs-target="#imageModal">
-                        <img src="kep.webp" alt="Alkotómunka és rajzolás" width="400" height="300" loading="lazy" decoding="async">
+                    <div class="gallery-item" onclick="showImage('kep.webp')" data-bs-toggle="modal"
+                        data-bs-target="#imageModal">
+                        <img src="kep.webp" alt="Alkotómunka és rajzolás" width="400" height="300" loading="lazy"
+                            decoding="async">
                         <div class="gallery-overlay"><i class="fas fa-search-plus fa-3x text-white"></i></div>
                     </div>
                 </div>
-                <!-- kep7 -->
                 <div class="col-lg-4 col-md-6" data-aos="zoom-in">
-                    <div class="gallery-item" onclick="showImage('kep7.webp')" data-bs-toggle="modal" data-bs-target="#imageModal">
-                        <img src="kep7.webp" alt="Vidám csoportos élmények" width="400" height="300" loading="lazy" decoding="async">
+                    <div class="gallery-item" onclick="showImage('kep7.webp')" data-bs-toggle="modal"
+                        data-bs-target="#imageModal">
+                        <img src="kep7.webp" alt="Vidám csoportos élmények" width="400" height="300" loading="lazy"
+                            decoding="async">
                         <div class="gallery-overlay"><i class="fas fa-search-plus fa-3x text-white"></i></div>
                     </div>
                 </div>
-                <!-- kep8 -->
                 <div class="col-lg-4 col-md-6" data-aos="zoom-in">
-                    <div class="gallery-item" onclick="showImage('kep8.webp')" data-bs-toggle="modal" data-bs-target="#imageModal">
-                        <img src="kep8.webp" alt="Kreatív rajzolás és festés" width="400" height="300" loading="lazy" decoding="async">
+                    <div class="gallery-item" onclick="showImage('kep8.webp')" data-bs-toggle="modal"
+                        data-bs-target="#imageModal">
+                        <img src="kep8.webp" alt="Kreatív rajzolás és festés" width="400" height="300" loading="lazy"
+                            decoding="async">
                         <div class="gallery-overlay"><i class="fas fa-search-plus fa-3x text-white"></i></div>
                     </div>
                 </div>
-                <!-- kep10 -->
                 <div class="col-lg-4 col-md-6" data-aos="zoom-in">
-                    <div class="gallery-item" onclick="showImage('kep10.webp')" data-bs-toggle="modal" data-bs-target="#imageModal">
-                        <img src="kep10.webp" alt="Közösségi pillanatok" width="400" height="300" loading="lazy" decoding="async">
+                    <div class="gallery-item" onclick="showImage('kep10.webp')" data-bs-toggle="modal"
+                        data-bs-target="#imageModal">
+                        <img src="kep10.webp" alt="Közösségi pillanatok" width="400" height="300" loading="lazy"
+                            decoding="async">
                         <div class="gallery-overlay"><i class="fas fa-search-plus fa-3x text-white"></i></div>
                     </div>
                 </div>
-                <!-- kep11 -->
                 <div class="col-lg-4 col-md-6" data-aos="zoom-in">
-                    <div class="gallery-item" onclick="showImage('kep11.webp')" data-bs-toggle="modal" data-bs-target="#imageModal">
-                        <img src="kep11.webp" alt="Kézműves foglalkozás" width="400" height="300" loading="lazy" decoding="async">
+                    <div class="gallery-item" onclick="showImage('kep11.webp')" data-bs-toggle="modal"
+                        data-bs-target="#imageModal">
+                        <img src="kep11.webp" alt="Kézműves foglalkozás" width="400" height="300" loading="lazy"
+                            decoding="async">
                         <div class="gallery-overlay"><i class="fas fa-search-plus fa-3x text-white"></i></div>
                     </div>
                 </div>
-                <!-- kep12 -->
                 <div class="col-lg-4 col-md-6" data-aos="zoom-in">
-                    <div class="gallery-item" onclick="showImage('kep12.webp')" data-bs-toggle="modal" data-bs-target="#imageModal">
-                        <img src="kep12.webp" alt="Élményfestés gyerekekkel" width="400" height="300" loading="lazy" decoding="async">
+                    <div class="gallery-item" onclick="showImage('kep12.webp')" data-bs-toggle="modal"
+                        data-bs-target="#imageModal">
+                        <img src="kep12.webp" alt="Élményfestés gyerekekkel" width="400" height="300" loading="lazy"
+                            decoding="async">
                         <div class="gallery-overlay"><i class="fas fa-search-plus fa-3x text-white"></i></div>
                     </div>
                 </div>
-                <!-- kep13 -->
                 <div class="col-lg-4 col-md-6" data-aos="zoom-in">
-                    <div class="gallery-item" onclick="showImage('kep13.webp')" data-bs-toggle="modal" data-bs-target="#imageModal">
-                        <img src="kep13.webp" alt="Vidám táncház pillanat" width="400" height="300" loading="lazy" decoding="async">
+                    <div class="gallery-item" onclick="showImage('kep13.webp')" data-bs-toggle="modal"
+                        data-bs-target="#imageModal">
+                        <img src="kep13.webp" alt="Vidám táncház pillanat" width="400" height="300" loading="lazy"
+                            decoding="async">
                         <div class="gallery-overlay"><i class="fas fa-search-plus fa-3x text-white"></i></div>
                     </div>
                 </div>
-                <!-- kep14 -->
                 <div class="col-lg-4 col-md-6" data-aos="zoom-in">
-                    <div class="gallery-item" onclick="showImage('kep14.webp')" data-bs-toggle="modal" data-bs-target="#imageModal">
-                        <img src="kep14.webp" alt="MiniKincsek zenei nevelés" width="400" height="300" loading="lazy" decoding="async">
+                    <div class="gallery-item" onclick="showImage('kep14.webp')" data-bs-toggle="modal"
+                        data-bs-target="#imageModal">
+                        <img src="kep14.webp" alt="MiniKincsek zenei nevelés" width="400" height="300" loading="lazy"
+                            decoding="async">
                         <div class="gallery-overlay"><i class="fas fa-search-plus fa-3x text-white"></i></div>
                     </div>
                 </div>
-                <!-- kep15 -->
                 <div class="col-lg-4 col-md-6" data-aos="zoom-in">
-                    <div class="gallery-item" onclick="showImage('kep15.webp')" data-bs-toggle="modal" data-bs-target="#imageModal">
-                        <img src="kep15.webp" alt="Kész munkák bemutatása" width="400" height="300" loading="lazy" decoding="async">
+                    <div class="gallery-item" onclick="showImage('kep15.webp')" data-bs-toggle="modal"
+                        data-bs-target="#imageModal">
+                        <img src="kep15.webp" alt="Kész munkák bemutatása" width="400" height="300" loading="lazy"
+                            decoding="async">
                         <div class="gallery-overlay"><i class="fas fa-search-plus fa-3x text-white"></i></div>
                     </div>
                 </div>
-                <!-- kep16 -->
                 <div class="col-lg-4 col-md-6" data-aos="zoom-in">
-                    <div class="gallery-item" onclick="showImage('kep16.webp')" data-bs-toggle="modal" data-bs-target="#imageModal">
-                        <img src="kep16.webp" alt="Gyerekek játéka" width="400" height="300" loading="lazy" decoding="async">
+                    <div class="gallery-item" onclick="showImage('kep16.webp')" data-bs-toggle="modal"
+                        data-bs-target="#imageModal">
+                        <img src="kep16.webp" alt="Gyerekek játéka" width="400" height="300" loading="lazy"
+                            decoding="async">
                         <div class="gallery-overlay"><i class="fas fa-search-plus fa-3x text-white"></i></div>
                     </div>
                 </div>
-                <!-- kep17 -->
                 <div class="col-lg-4 col-md-6" data-aos="zoom-in">
-                    <div class="gallery-item" onclick="showImage('kep17.webp')" data-bs-toggle="modal" data-bs-target="#imageModal">
-                        <img src="kep17.webp" alt="Gyurma és térbeli formák" width="400" height="300" loading="lazy" decoding="async">
+                    <div class="gallery-item" onclick="showImage('kep17.webp')" data-bs-toggle="modal"
+                        data-bs-target="#imageModal">
+                        <img src="kep17.webp" alt="Gyurma és térbeli formák" width="400" height="300" loading="lazy"
+                            decoding="async">
                         <div class="gallery-overlay"><i class="fas fa-search-plus fa-3x text-white"></i></div>
                     </div>
                 </div>
-                <!-- kep18 -->
                 <div class="col-lg-4 col-md-6" data-aos="zoom-in">
-                    <div class="gallery-item" onclick="showImage('kep18.webp')" data-bs-toggle="modal" data-bs-target="#imageModal">
-                        <img src="kep18.webp" alt="Szülinapi ünneplés" width="400" height="300" loading="lazy" decoding="async">
+                    <div class="gallery-item" onclick="showImage('kep18.webp')" data-bs-toggle="modal"
+                        data-bs-target="#imageModal">
+                        <img src="kep18.webp" alt="Szülinapi ünneplés" width="400" height="300" loading="lazy"
+                            decoding="async">
                         <div class="gallery-overlay"><i class="fas fa-search-plus fa-3x text-white"></i></div>
                     </div>
                 </div>
-                <!-- kep19 -->
                 <div class="col-lg-4 col-md-6" data-aos="zoom-in">
-                    <div class="gallery-item" onclick="showImage('kep19.webp')" data-bs-toggle="modal" data-bs-target="#imageModal">
-                        <img src="kep19.webp" alt="Mesedélután" width="400" height="300" loading="lazy" decoding="async">
+                    <div class="gallery-item" onclick="showImage('kep19.webp')" data-bs-toggle="modal"
+                        data-bs-target="#imageModal">
+                        <img src="kep19.webp" alt="Mesedélután" width="400" height="300" loading="lazy"
+                            decoding="async">
                         <div class="gallery-overlay"><i class="fas fa-search-plus fa-3x text-white"></i></div>
                     </div>
                 </div>
-                <!-- kep20 -->
                 <div class="col-lg-4 col-md-6" data-aos="zoom-in">
-                    <div class="gallery-item" onclick="showImage('kep20.webp')" data-bs-toggle="modal" data-bs-target="#imageModal">
-                        <img src="kep20.webp" alt="Közös alkotás" width="400" height="300" loading="lazy" decoding="async">
+                    <div class="gallery-item" onclick="showImage('kep20.webp')" data-bs-toggle="modal"
+                        data-bs-target="#imageModal">
+                        <img src="kep20.webp" alt="Közös alkotás" width="400" height="300" loading="lazy"
+                            decoding="async">
                         <div class="gallery-overlay"><i class="fas fa-search-plus fa-3x text-white"></i></div>
                     </div>
                 </div>
-                <!-- kep21 -->
                 <div class="col-lg-4 col-md-6" data-aos="zoom-in">
-                    <div class="gallery-item" onclick="showImage('kep21.webp')" data-bs-toggle="modal" data-bs-target="#imageModal">
-                        <img src="kep21.webp" alt="Iskolaelőkészítő feladatok" width="400" height="300" loading="lazy" decoding="async">
+                    <div class="gallery-item" onclick="showImage('kep21.webp')" data-bs-toggle="modal"
+                        data-bs-target="#imageModal">
+                        <img src="kep21.webp" alt="Iskolaelőkészítő feladatok" width="400" height="300" loading="lazy"
+                            decoding="async">
                         <div class="gallery-overlay"><i class="fas fa-search-plus fa-3x text-white"></i></div>
                     </div>
                 </div>
-                <!-- kep27 -->
                 <div class="col-lg-4 col-md-6" data-aos="zoom-in">
-                    <div class="gallery-item" onclick="showImage('kep27.webp')" data-bs-toggle="modal" data-bs-target="#imageModal">
-                        <img src="kep27.webp" alt="Művészeti klub foglalkozás" width="400" height="300" loading="lazy" decoding="async">
+                    <div class="gallery-item" onclick="showImage('kep27.webp')" data-bs-toggle="modal"
+                        data-bs-target="#imageModal">
+                        <img src="kep27.webp" alt="Művészeti klub foglalkozás" width="400" height="300" loading="lazy"
+                            decoding="async">
                         <div class="gallery-overlay"><i class="fas fa-search-plus fa-3x text-white"></i></div>
                     </div>
                 </div>
-                <!-- kep25 -->
                 <div class="col-lg-4 col-md-6" data-aos="zoom-in">
-                    <div class="gallery-item" onclick="showImage('kep25.webp')" data-bs-toggle="modal" data-bs-target="#imageModal">
-                        <img src="kep25.webp" alt="Vidám alkotók" width="400" height="300" loading="lazy" decoding="async">
+                    <div class="gallery-item" onclick="showImage('kep25.webp')" data-bs-toggle="modal"
+                        data-bs-target="#imageModal">
+                        <img src="kep25.webp" alt="Vidám alkotók" width="400" height="300" loading="lazy"
+                            decoding="async">
                         <div class="gallery-overlay"><i class="fas fa-search-plus fa-3x text-white"></i></div>
                     </div>
                 </div>
@@ -771,26 +847,32 @@
                             <i class="fas fa-map-marker-alt mt-1 me-3 text-accent"></i>
                             <div>
                                 <p class="mb-0">1096 Budapest, Lenhossék utca 31.</p>
-                                <p class="mb-0 small opacity-75">Helyszín: Tűzoltó utca 68.</p>
+                                <p class="mb-0 small text-white text-opacity-75">Helyszín: Tűzoltó utca 68.</p>
                             </div>
                         </div>
                         <div class="d-flex mb-4">
                             <i class="fas fa-phone mt-1 me-3 text-accent"></i>
                             <div>
-                                <p class="mb-1">Edina: <a href="tel:+36205232799" class="text-white">+36 20 523 2799</a></p>
-                                <p class="mb-0">Zita: <a href="tel:+36205236466" class="text-white">+36 20 523 6466</a></p>
+                                <p class="mb-1">Edina: <a href="tel:+36205232799" class="text-white">+36 20 523 2799</a>
+                                </p>
+                                <p class="mb-0">Zita: <a href="tel:+36205236466" class="text-white">+36 20 523 6466</a>
+                                </p>
                             </div>
                         </div>
                         <div class="d-flex mb-4">
                             <i class="fas fa-envelope mt-1 me-3 text-accent"></i>
                             <a href="mailto:kincsek9@gmail.com" class="text-white">kincsek9@gmail.com</a>
                         </div>
-                        
+
                         <h5 class="mt-5 mb-3">Kövess minket!</h5>
                         <div class="d-flex">
-                            <a href="https://www.facebook.com/profile.php?id=61578372524178" target="_blank" rel="noopener noreferrer" class="social-circle" aria-label="Facebook oldal"><i class="fab fa-facebook-f"></i></a>
-                            <a href="https://www.instagram.com/kincsekklub" target="_blank" rel="noopener noreferrer" class="social-circle" aria-label="Instagram profil"><i class="fab fa-instagram"></i></a>
-                            <a href="https://www.tiktok.com/@kincsek77" target="_blank" rel="noopener noreferrer" class="social-circle" aria-label="TikTok profil"><i class="fab fa-tiktok"></i></a>
+                            <a href="https://www.facebook.com/profile.php?id=61578372524178" target="_blank"
+                                rel="noopener noreferrer" class="social-circle" aria-label="Facebook oldal"><i
+                                    class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.instagram.com/kincsekklub" target="_blank" rel="noopener noreferrer"
+                                class="social-circle" aria-label="Instagram profil"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.tiktok.com/@kincsek77" target="_blank" rel="noopener noreferrer"
+                                class="social-circle" aria-label="TikTok profil"><i class="fab fa-tiktok"></i></a>
                         </div>
                     </div>
                 </div>
@@ -799,16 +881,19 @@
                         <h4 class="mb-4 text-white">Írj nekünk!</h4>
                         <form id="contactForm">
                             <div class="mb-3">
-                                <label class="form-label small text-white opacity-75">Név</label>
-                                <input type="text" class="form-input" name="name" placeholder="Hogy szólíthatunk?" required autocomplete="name">
+                                <label for="contact-name" class="form-label small text-white">Név</label>
+                                <input type="text" id="contact-name" class="form-input" name="name"
+                                    placeholder="Hogy szólíthatunk?" required autocomplete="name">
                             </div>
                             <div class="mb-3">
-                                <label class="form-label small text-white opacity-75">Email cím</label>
-                                <input type="email" class="form-input" name="email" placeholder="pelda@email.hu" required autocomplete="email">
+                                <label for="contact-email" class="form-label small text-white">Email cím</label>
+                                <input type="email" id="contact-email" class="form-input" name="email"
+                                    placeholder="pelda@email.hu" required autocomplete="email">
                             </div>
                             <div class="mb-3">
-                                <label class="form-label small text-white opacity-75">Üzenet</label>
-                                <textarea class="form-input" name="message" rows="4" placeholder="Miben segíthetünk?" required></textarea>
+                                <label for="contact-message" class="form-label small text-white">Üzenet</label>
+                                <textarea id="contact-message" class="form-input" name="message" rows="4"
+                                    placeholder="Miben segíthetünk?" required></textarea>
                             </div>
                             <button type="submit" class="btn btn-premium w-100">
                                 <span class="btn-text">Üzenet Küldése</span>
@@ -828,8 +913,8 @@
             <h2 class="text-white mb-4 fw-bold">Kincsek <span style="color: var(--accent);">Klub</span></h2>
             <p class="mb-4">Minden gyermek egy különleges kincs.</p>
             <div class="mb-4">
-                <a href="#adatkezeles" class="text-decoration-none mx-3 text-white-50">Adatkezelés</a>
-                <a href="#aszf" class="text-decoration-none mx-3 text-white-50">ÁSZF</a>
+                <a href="#adatkezeles" class="text-decoration-none mx-3 text-white text-opacity-75">Adatkezelés</a>
+                <a href="#aszf" class="text-decoration-none mx-3 text-white text-opacity-75">ÁSZF</a>
             </div>
             <hr class="opacity-25 my-5">
             <p class="small mb-0">&copy; 2025 Kincsek Művészeti Klub. Minden jog fenntartva.</p>
@@ -841,7 +926,8 @@
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content glass" style="border: none;">
                 <div class="modal-body p-0">
-                    <img src="" id="modalImage" class="img-fluid rounded-4" alt="Nagyított galéria kép" width="800" height="600" loading="lazy">
+                    <img src="" id="modalImage" class="img-fluid rounded-4" alt="Nagyított galéria kép" width="800"
+                        height="600" loading="lazy">
                 </div>
             </div>
         </div>
@@ -852,7 +938,8 @@
             <div class="modal-content rounded-4 border-0">
                 <div class="modal-header p-4 border-0" style="background: var(--primary); color: white;">
                     <h5 class="modal-title fw-bold">🔒 Adatkezelési nyilatkozat</h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Bezárás"></button>
                 </div>
                 <div class="modal-body p-4 bg-light">
                     <h5 class="fw-bold" style="color: var(--primary);">1. Adatkezelő</h5>
@@ -869,7 +956,8 @@
             <div class="modal-content rounded-4 border-0">
                 <div class="modal-header p-4 border-0" style="background: var(--secondary); color: white;">
                     <h5 class="modal-title fw-bold">📋 Általános Szerződési Feltételek</h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Bezárás"></button>
                 </div>
                 <div class="modal-body p-4 bg-light">
                     <h5 class="fw-bold" style="color: var(--secondary);">1. Általános szabályok</h5>
@@ -883,9 +971,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" defer></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js" defer></script>
-    
+
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // Init AOS
             if (typeof AOS !== 'undefined') {
                 AOS.init({
@@ -898,9 +986,9 @@
             // Navbar scroll effect with requestAnimationFrame & passive listener
             const nav = document.getElementById('mainNav');
             let isTicking = false;
-            window.addEventListener('scroll', function() {
+            window.addEventListener('scroll', function () {
                 if (!isTicking) {
-                    window.requestAnimationFrame(function() {
+                    window.requestAnimationFrame(function () {
                         if (window.scrollY > 50) {
                             nav.classList.add('scrolled');
                         } else {
@@ -919,24 +1007,24 @@
 
             const contactForm = document.getElementById('contactForm');
             if (contactForm) {
-                contactForm.addEventListener('submit', function(e) {
+                contactForm.addEventListener('submit', function (e) {
                     e.preventDefault();
                     const submitBtn = this.querySelector('button[type="submit"]');
                     const btnText = submitBtn.querySelector('.btn-text');
                     const btnLoading = submitBtn.querySelector('.btn-loading');
-                    
+
                     submitBtn.disabled = true;
                     btnText.style.display = 'none';
                     btnLoading.style.display = 'inline';
-                    
+
                     emailjs.sendForm('service_mk3ozra', 'template_gosh0qq', this)
-                        .then(function() {
+                        .then(function () {
                             alert('✅ Üzenet sikeresen elküldve!');
                             contactForm.reset();
                             submitBtn.disabled = false;
                             btnText.style.display = 'inline';
                             btnLoading.style.display = 'none';
-                        }, function(error) {
+                        }, function (error) {
                             alert('❌ Hiba történt: ' + error.text);
                             submitBtn.disabled = false;
                             btnText.style.display = 'inline';
@@ -949,7 +1037,7 @@
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
                     const href = this.getAttribute('href');
-                    
+
                     if (href === '#adatkezeles') {
                         e.preventDefault();
                         new bootstrap.Modal(document.getElementById('adatkezelesModal')).show();
@@ -980,4 +1068,5 @@
         }
     </script>
 </body>
+
 </html>
