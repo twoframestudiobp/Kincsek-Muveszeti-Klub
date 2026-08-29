@@ -15,8 +15,8 @@
     <link rel="preconnect" href="https://cdn.jsdelivr.net">
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
 
-    <!-- Google Fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Quicksand:wght@700&display=swap">
+    <!-- Google Fonts (display=optional for zero font-swap layout shift) -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Quicksand:wght@700&display=optional">
 
     <!-- CSS Dependencies -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -216,12 +216,6 @@
         section {
             padding: 100px 0;
             position: relative;
-        }
-
-        #galeria,
-        #kapcsolat {
-            content-visibility: auto;
-            contain-intrinsic-size: 1px 700px;
         }
 
         .section-header {
